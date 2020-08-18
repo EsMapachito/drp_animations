@@ -1,8 +1,8 @@
 -- RECURSO MODIFICADO PARA EL SERVIDOR RP DESPERADOSRP.COM --
 -- Implementado por Mapachito --
 
-RegisterNetEvent('drp_salute:sendProximityMessage')
-AddEventHandler('drp_salute:sendProximityMessage', function(playerId, title, message, color)
+RegisterNetEvent('drp_suelo:sendProximityMessage')
+AddEventHandler('drp_suelo:sendProximityMessage', function(playerId, title, message, color)
 	local player = PlayerId()
 	local target = GetPlayerFromServerId(playerId)
 
@@ -10,7 +10,22 @@ AddEventHandler('drp_salute:sendProximityMessage', function(playerId, title, mes
 	local playerCoords, targetCoords = GetEntityCoords(playerPed), GetEntityCoords(targetPed)
 
     if target == player or #(playerCoords - targetCoords) < 20 then
-        TaskStartScenarioInPlace(playerPed, GetHashKey('WORLD_HUMAN_SLEEP_GROUND_ARM'), -1, true, false, false, false)
+        TaskStartScenarioInPlace(playerPed, GetHashKey('WORLD_HUMAN_DRUNK_PASSED_OUT_FLOOR'), -1, true, false, false, false)
+        Wait(2500)
+        TriggerEvent('chat:addMessage', {args = {title, message}, color = color})
+	end
+end)
+----
+RegisterNetEvent('drp_vomitar:sendProximityMessage')
+AddEventHandler('drp_vomitar:sendProximityMessage', function(playerId, title, message, color)
+	local player = PlayerId()
+	local target = GetPlayerFromServerId(playerId)
+
+	local playerPed, targetPed = PlayerPedId(), GetPlayerPed(target)
+	local playerCoords, targetCoords = GetEntityCoords(playerPed), GetEntityCoords(targetPed)
+
+    if target == player or #(playerCoords - targetCoords) < 20 then
+        TaskStartScenarioInPlace(playerPed, GetHashKey('WORLD_HUMAN_VOMIT'), -1, true, false, false, false)
         Wait(2500)
         TriggerEvent('chat:addMessage', {args = {title, message}, color = color})
 	end

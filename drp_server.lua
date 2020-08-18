@@ -2,11 +2,21 @@
 -- Implementado por Mapachito --
 
 --  HOLA --
-RegisterCommand('hola', function(source, args, rawCommand)
+RegisterCommand('suelo', function(source, args, rawCommand)
     local _source = source
     TriggerEvent("vorp:getCharacter", _source, function(user)
         local playerName = user.firstname..' '..user.lastname
-        TriggerClientEvent('drp_salute:sendProximityMessage', -1, _source, "["..playerName.."] saluda")
+        TriggerClientEvent('drp_suelo:sendProximityMessage', -1, _source, "["..playerName.."] se desmaya...")
+    end)
+end, false)
+
+-- VOMITAR --
+
+RegisterCommand('vomitar', function(source, args, rawCommand)
+    local _source = source
+    TriggerEvent("vorp:getCharacter", _source, function(user)
+        local playerName = user.firstname..' '..user.lastname
+        TriggerClientEvent('drp_vomitar:sendProximityMessage', -1, _source, "["..playerName.."] parece encontrarse mal...")
     end)
 end, false)
 

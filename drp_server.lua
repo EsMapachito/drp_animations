@@ -72,6 +72,8 @@ end, false)
 
 -- REHEN --
 
+-- REVISAR ARMA --
+
 RegisterCommand('rehen', function(source, args, rawCommand)
     local _source = source
     TriggerEvent("vorp:getCharacter", _source, function(user)
@@ -86,7 +88,7 @@ RegisterCommand('notas', function(source, args, rawCommand)
     local _source = source
     TriggerEvent("vorp:getCharacter", _source, function(user)
         local playerName = user.firstname..' '..user.lastname
-        TriggerClientEvent('drp_salute:sendProximityMessage', -1, _source, "["..playerName.."] está anotando")
+        TriggerClientEvent('drp_notas:sendProximityMessage', -1, _source, "["..playerName.."] está anotando")
     end)
 end, false)
 

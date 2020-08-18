@@ -1,6 +1,5 @@
 -- RECURSO CREADO PARA EL SERVIDOR RP DESPERADOSRP.COM --
 -- Implementado por Mapachito --
-/lanzar
 /revisar
 /apoyar
 /dado

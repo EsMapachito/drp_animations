@@ -1,7 +1,7 @@
 -- RECURSO MODIFICADO PARA EL SERVIDOR RP DESPERADOSRP.COM --
 -- Implementado por Mapachito --
 
---  HOLA --
+--  SUELO --
 RegisterCommand('suelo', function(source, args, rawCommand)
     local _source = source
     TriggerEvent("vorp:getCharacter", _source, function(user)
@@ -112,4 +112,14 @@ RegisterCommand('orinar', function(source, args, rawCommand)
     end)
 end, false)
 
--- 
+-- PASAPORTE --
+
+RegisterCommand('pc', function(source, args, rawCommand)
+    local _source = source
+    TriggerEvent("vorp:getCharacter", _source, function(user)
+        local playerName = user.firstname..' '..user.lastname
+        TriggerClientEvent('drp_passport:sendProximityMessage', -1, _source, "["..playerName.."]:", "Entrega su identificación, leyéndose: "..playerName.."", {255, 0, 0})
+    end)
+end, false)
+
+--

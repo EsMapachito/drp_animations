@@ -178,3 +178,20 @@ AddEventHandler('drp_orinar:sendProximityMessage', function(playerId, title, mes
         TriggerEvent('chat:addMessage', {args = {title, message}, color = color})
 	end
 end)
+
+-----
+
+RegisterNetEvent('drp_passport:sendProximityMessage')
+AddEventHandler('drp_passport:sendProximityMessage', function(playerId, title, message, color)
+	local player = PlayerId()
+	local target = GetPlayerFromServerId(playerId)
+
+	local playerPed, targetPed = PlayerPedId(), GetPlayerPed(target)
+	local playerCoords, targetCoords = GetEntityCoords(playerPed), GetEntityCoords(targetPed)
+
+    if target == player or #(playerCoords - targetCoords) < 20 then
+        --TaskStartScenarioInPlace(PlayerPedId(), GetHashKey('WORLD_HUMAN_BOOK_PUT_DOWN_GROUND'), -1, true, false, false, false)
+        Wait(2500)
+        TriggerEvent('chat:addMessage', {args = {title, message}, color = color})
+	end
+end)

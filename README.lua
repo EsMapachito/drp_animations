@@ -15,3 +15,7 @@ SI UTILIZAS EL RECURSO, MENCIONAME Y CONTRIBUYE A QUE LA COMUNIDAD ESPAÑOLA DE 
 A disfrutarlo!!
 
 VERSIÓN 1.0 17-08-2020
+
+UPDATE VERSION 1.1 23-08-2020
+- Added passport card identification system
+On chat: /pc
